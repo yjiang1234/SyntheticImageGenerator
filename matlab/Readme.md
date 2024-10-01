@@ -1,4 +1,4 @@
-Overview
+##Overview
 
 This MATLAB script generates synthetic fluorescent images and a corresponding labeled instance segmentation image. Each “cell” has an elliptical shape with random size, orientation, and intensity. The cells are generated without overlap, and the label assign a unique integer to each ellipse. The script also applies Gaussian blur to simulate the glow typically observed in real microscopy images.
 
