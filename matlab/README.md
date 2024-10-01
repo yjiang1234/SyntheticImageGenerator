@@ -12,10 +12,15 @@ Both images are displayed side by side in the figure in MATLAB environment and a
 ## Features and Assumptions:
 
 **1. Random Elliptical cells**: Each cell has elliptical shape, which is generated with random semi-major and semi-minor axes, and a random rotation angel. The “size”, which is the base radius can be adjusted to show larger or smaller cells. 
+
 **2. Homogeneous distribution of Fluorescent**: I assume that the fluorescent is expressed homogeneously in the whole cell. A Gaussian blur is added to mimic the real image but the assumption is there is no difference of fluorescent expression level in the nucleus and cytoplasma.
-**3. No Overlap**: The cells are placed in a way that they do not overlap
-**4. Gaussian Blur**: The fluorescent image is blurred with Gaussian method to mimic the fluorescent glow effect
+
+**3. No Overlap**: The cells are placed in a way that they do not overlap.
+
+**4. Gaussian Blur**: The fluorescent image is blurred with Gaussian method to mimic the fluorescent glow effect.
+
 **5. Labeling:** Each ellipse has a unique label in the instance segmentation image.
+
 **6. Saving output:** The generated image (fluorescent image in uint16 and labeled image as uint8) are saved as PNG files
 
 ## Requirements:
