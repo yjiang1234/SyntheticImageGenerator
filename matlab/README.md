@@ -31,11 +31,11 @@ MATLAB: This script requires MATLAB with the Image Processing Toolbox.
 2.	Open the script file in MATLAB
 3.	Run the script. The following will be generated:
 
-  a.	A 128*128 pixel synthetic fluorescent image with 9 yellow (fake color) cells
+  -a.	A 128*128 pixel synthetic fluorescent image with 9 yellow (fake color) cells
   
-  b.	A labeled instance segmentation image.
+  -b.	A labeled instance segmentation image.
   
-  c.	The synthetic fluorescent image saved as uint16 and the labeled segmentation image saved as uint8 as PNG files.
+  -c.	The synthetic fluorescent image saved as uint16 and the labeled segmentation image saved as uint8 as PNG files.
 ## Customization:
 **1.	Image size:** Change the Image_size to define the pixels for the output images
 
