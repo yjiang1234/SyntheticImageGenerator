@@ -1,6 +1,7 @@
 # Synthetic Image Generator
 
-## Overview: This project generates synthetic fluorescent images and its corresponding labeled images to be used to train models. It also implements and tests a Mask R-CNN model by using the generated images.
+## Overview: 
+This project generates synthetic fluorescent images and its corresponding labeled images to be used to train models. It also implements and tests a Mask R-CNN model by using the generated images.
 
 ## Project Structure
 [matlab](matlab): This folder contains a MATLAB script. This MATLAB script generates synthetic fluorescent images and a corresponding labeled instance segmentation image. These images will be shown in figure in MATLAB environment and also saved as PNG 
