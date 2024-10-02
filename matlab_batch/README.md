@@ -57,5 +57,5 @@ ImageGeneratorNoFig.m is a function identical to ImageGenerator.m but will not s
 
 **6.	Export image name:** You can change file_name_for_save_fluorescent and file_name_for_save_label for the export file name and path. 
 
-**7. Batch Run: ** In batch_run.m, you can define how many images you want to generate by change n. You can also change the saved file name and path by changing "file_name_fluo" and "file_name_label".
+**7. Batch run** In batch_run.m, you can define how many images you want to generate by change n. You can also change the saved file name and path by changing "file_name_fluo" and "file_name_label".
 
