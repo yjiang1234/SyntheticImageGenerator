@@ -21,21 +21,24 @@ The project uses a pre-trained ResNET-50 backbone for the Mask R-CNN model.
 
 ## Training the Model
 
-Due to the limitation of hardware, I only used 1 pair of fluorescent/labeled image and 3 epochs to train the model.
+Due to the limitation of hardware, I only used 1 pair of fluorescent/labeled image and 5 epochs to train the model.
 
 1. The fluorescent images and masks are loaded using a custom FluorescentDataset class. The class converts the image to a format compatible with Mask R-CNN (normalized, channel_adjusted)
 
-2. The model is trained for 3 epochs using a standard training loop that calculates losses for classification, bounding boxes, and masks.
+2. The model is trained for 5 epochs using a standard training loop that calculates losses for classification, bounding boxes, and masks.
 
 3. The loss value are printed for each epoch.
 
 ### Training output:
+Epoch [1/5], Batch [1/1], Loss: 4.7811
 
-Epoch [1/3], Batch [1/1], Loss: 6.7068
+Epoch [2/5], Batch [1/1], Loss: 1.0190
 
-Epoch [2/3], Batch [1/1], Loss: 1.1129
+Epoch [3/5], Batch [1/1], Loss: 0.8867
 
-Epoch [3/3], Batch [1/1], Loss: 0.9867
+Epoch [4/5], Batch [1/1], Loss: 0.8076
+
+Epoch [5/5], Batch [1/1], Loss: 0.6245
 
 ## Evaluating the Model:
 
@@ -43,6 +46,7 @@ After training, I evaluate the model using images in the test_image. The images 
 We can visualize the model's prediction on the test images. It shows the bounding boxes and predicted masks.
 I also calculated Intersection over Union (IoU) between the predicted masks and ground truth masks (labeled images).
 
-The IoU for the boxes is 0.80, and the Iou for the mask is: 0.4420.
+The IoU for the boxes is 0.8576, and the Iou for the mask is: 0.6516.
+These results suggested that the generated images can help to train the model.
 
 
