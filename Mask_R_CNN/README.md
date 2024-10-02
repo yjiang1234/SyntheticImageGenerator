@@ -32,7 +32,9 @@ Due to the limitation of hardware, I only used 1 pair of fluorescent/labeled ima
 ### Training output:
 
 Epoch [1/3], Batch [1/1], Loss: 6.7068
+
 Epoch [2/3], Batch [1/1], Loss: 1.1129
+
 Epoch [3/3], Batch [1/1], Loss: 0.9867
 
 ## Evaluating the Model:
