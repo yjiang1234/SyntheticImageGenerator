@@ -19,9 +19,11 @@ Both images are displayed side by side in the figure in MATLAB environment and a
 
 **4. Gaussian Blur**: The fluorescent image is blurred with Gaussian method to mimic the fluorescent glow effect.
 
-**5. Labeling:** Each ellipse has a unique label in the instance segmentation image.
+**5. Gaussian Noises**: A Gaussian noise that affects every pixel independently are added to the image to mimic microscope camera noise.
 
-**6. Saving output:** The generated image (fluorescent image in uint16 and labeled image as uint8) are saved as PNG files
+**6. Labeling:** Each ellipse has a unique label in the instance segmentation image.
+
+**7. Saving output:** The generated image (fluorescent image in uint16 and labeled image as uint8) are saved as PNG files
 
 ## Requirements:
 MATLAB: This script requires MATLAB with the Image Processing Toolbox.
