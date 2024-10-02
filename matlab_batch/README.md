@@ -16,7 +16,9 @@ The features and assumptions are basically the same as the matlab/imagegenerator
 
 **5. Labeling:** Each ellipse has a unique label in the instance segmentation image.
 
-**6. Saving output:** The generated image (fluorescent image in uint16 and labeled image as uint8) are saved as PNG files
+**6. Gaussian Noises**: A Gaussian noise that affects every pixel independently are added to the image to mimic microscope camera noise.
+
+**7. Saving output:** The generated image (fluorescent image in uint16 and labeled image as uint8) are saved as PNG files
 ## Retuirements
 
 **MATLAB**: This script requires MATLAB with the Image Processing Toolbox.
