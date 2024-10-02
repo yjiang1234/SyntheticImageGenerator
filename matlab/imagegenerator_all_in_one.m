@@ -6,6 +6,7 @@ num_spots = 9; % Number of fluorescent spots
 spot_radius = 8; % Average radius of the fluorescnt sports
 spot_intensity_range = [1000, 3000];  % Intensity range of the spots
 min_distance_between_spots = 40; %Minimum distance to avoid overlap
+noise_level = 100; %set the camera noise level
 
 file_name_for_save_fluorescent = 'fluorescent_image.png';
 file_name_for_save_label = 'label_image.png';
@@ -62,8 +63,19 @@ while spot_count < num_spots
 end
 
 % Apply Gaussian blur to simulate fluorescence glow
+img_double = double(img);
+
 img_blurred = imgaussfilt(double(img), 1);
-img_blurred = uint16(min(img_blurred, max_uint16));  % Convert back to uint16 and limit values
+
+% Add Gaussian noise
+% Generate Gaussian noise in the original scale (65535)
+noise = noise_level*randn(size(img_blurred));
+% Add noise to the blurred image
+img_blurred_with_noise = img_blurred + noise;
+% make sure the value is within the range for uint16
+img_blurred_with_noise = max(min(img_blurred_with_noise, 65535), 0);
+
+img_blurred = uint16(img_blurred_with_noise);  % Convert back to uint16 and limit values
 
 
 % Display the synthetic fluorescent image (monochromatic)
