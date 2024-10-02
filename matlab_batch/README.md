@@ -30,7 +30,7 @@ The features and assumptions are basically the same as the matlab/imagegenerator
 2.	Open MATLAB, make sure all files are in the same folder
 3.	Run the example.m file. The following will be generated:
 
-   	a.	A 128*128 pixel synthetic fluorescent image with 9 yellow (fake color) cells
+   	a.	A 128*128 pixels synthetic fluorescent image with 9 yellow (fake color) cells
   
   	b.	A labeled instance segmentation image.
   
