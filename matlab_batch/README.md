@@ -56,9 +56,11 @@ ImageGeneratorNoFig.m is a function identical to ImageGenerator.m but will not s
 
 **4.	Fluorescent Intensity:** Since the fluorescent images can usually adjusted for visualization, here I defined the range for the fluorescent intensity, instead of absolute intensity. The intensity of each cell will be a random number in the intensity range, so a larger range will result in some cells are very bright and some are dim. A smaller range will generate cell in similar fluorescent intensity.
 
-**5.	Distance between cells:** you can adjust min_distance_between_spots to change the minimum distance between cells. It is recommended for this value to be at least 3*spot_radius to avoid overlap.
+**5.	Distance between cells:** You can adjust min_distance_between_spots to change the minimum distance between cells. It is recommended for this value to be at least 3*spot_radius to avoid overlap.
 
-**6.	Export image name:** You can change file_name_for_save_fluorescent and file_name_for_save_label for the export file name and path. 
+**6. Noise level**: Change noise_level to adjust the noise level added to the image. The larger number means more noisy image. 
 
-**7. Batch run** In batch_run.m, you can define how many images you want to generate by change n. You can also change the saved file name and path by changing "file_name_fluo" and "file_name_label".
+**7.	Export image name:** You can change file_name_for_save_fluorescent and file_name_for_save_label for the export file name and path. 
+
+**8. Batch run** In batch_run.m, you can define how many images you want to generate by change n. You can also change the saved file name and path by changing "file_name_fluo" and "file_name_label".
 
