@@ -6,19 +6,20 @@ This MATLAB script generates synthetic fluorescent images and a corresponding la
 ## Features and Assumptions:
 The features and assumptions are basically the same as the matlab/imagegenerator_all_in_one. This script just seperate the center generator and cell_mask (here is ellipse) as sepearte function, so it will be easier to add other cell mask if needed. It also change the whole scipt (matlab/imagegenerator_all_in_one) into a function so we can do a batch run on it to generate multiple image datasets.
 
-**1. Random Elliptical cells**: Each cell has elliptical shape, which is generated with random semi-major and semi-minor axes, and a random rotation angel. The “size”, which is the base radius can be adjusted to show larger or smaller cells. 
+**1. Random Elliptical cells**: Each cell has an elliptical shape, generated with random semi-major and semi-minor axes, and a random rotation angel. The “size”, which is the base radius can be adjusted to show larger or smaller cells. 
 
-**2. Homogeneous distribution of Fluorescent**: I assume that the fluorescent is expressed homogeneously in the whole cell. A Gaussian blur is added to mimic the real image but the assumption is there is no difference of fluorescent expression level in the nucleus and cytoplasma.
+**2. Homogeneous distribution of Fluorescent**: The fluorescent signal is assumed to be expressed homogeneously throughout the cell. A Gaussian blur is added to mimic a real image, but it is assumed that there is no difference in the fluorescent expression level between the nucleus and cytoplasm.
 
-**3. No Overlap**: The cells are placed in a way that they do not overlap.
+**3. No Overlap**: Cells are placed in a way that they do not overlap.
 
-**4. Gaussian Blur**: The fluorescent image is blurred with Gaussian method to mimic the fluorescent glow effect.
+**4. Gaussian Blur**: The fluorescent image is blurred with a Gaussian filter to mimic the fluorescent glow effect.
 
 **5. Labeling:** Each ellipse has a unique label in the instance segmentation image.
 
-**6. Gaussian Noises**: A Gaussian noise that affects every pixel independently are added to the image to mimic microscope camera noise.
+**6. Gaussian Noises**: Gaussian noise that affects every pixel independently are added to the image to mimic microscope camera noise.
 
 **7. Saving output:** The generated image (fluorescent image in uint16 and labeled image as uint8) are saved as PNG files
+
 ## Retuirements
 
 **MATLAB**: This script requires MATLAB with the Image Processing Toolbox.
