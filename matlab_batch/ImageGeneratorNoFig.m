@@ -6,7 +6,7 @@
 % intensity range (spot_intensity_range))
 % Don't generate figures. only generate data for further save and
 % imshow()
-function [img_blurred, label_img] = ImageGeneratorNoFig(width,height,num_spots,spot_radius,spot_intensity_range,min_distance_between_spots)
+function [img_blurred, label_img] = ImageGeneratorNoFig(width,height,num_spots,spot_radius,spot_intensity_range,min_distance_between_spots,noise_level)
 
 
     % Image size and parameters
@@ -15,7 +15,7 @@ function [img_blurred, label_img] = ImageGeneratorNoFig(width,height,num_spots,s
     %spot_radius = 8; % Average radius of the fluorescnt sports
     %spot_intensity_range = [1000, 3000];  % Intensity range of the spots
     %min_distance_between_spots = 40; %Minimum distance to avoid overlap
-
+    %noise_level = 100; %set the camera noise level
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     max_uint16 = double(intmax("uint16"));
     
@@ -45,9 +45,20 @@ function [img_blurred, label_img] = ImageGeneratorNoFig(width,height,num_spots,s
         spot_centers(spot_count, :) = [x, y];
     
     end
-    % Apply Gaussian blur to simulate fluorescence glow
+      % Apply Gaussian blur to simulate fluorescence glow
+    img_double = double(img);
+    
     img_blurred = imgaussfilt(double(img), 1);
-    img_blurred = uint16(min(img_blurred, max_uint16));  % Convert back to uint16 and limit values
+    
+    % Add Gaussian noise
+    % Generate Gaussian noise in the original scale (65535)
+    noise = noise_level*randn(size(img_blurred));
+    % Add noise to the blurred image
+    img_blurred_with_noise = img_blurred + noise;
+    % make sure the value is within the range for uint16
+    img_blurred_with_noise = max(min(img_blurred_with_noise, 65535), 0);
+    
+    img_blurred = uint16(img_blurred_with_noise);  % Convert back to uint16 and limit values
     
    
 end

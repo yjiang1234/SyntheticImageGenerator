@@ -8,11 +8,12 @@ num_spots = 9; % Number of fluorescent spots
 spot_radius = 8; % Average radius of the fluorescnt sports
 spot_intensity_range = [1000, 3000];  % Intensity range of the spots
 min_distance_between_spots = 40; %Minimum distance to avoid overlap
+noise_level = 100; %set the camera noise level
 file_name_fluo = 'fluorescent_image_'
 file_name_label = 'label_image_'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 for i = 1:n
-    [img_blurred, label_img] = ImageGeneratorNoFig(image_width,image_height,num_spots,spot_radius,spot_intensity_range,min_distance_between_spots);
+    [img_blurred, label_img] = ImageGeneratorNoFig(image_width,image_height,num_spots,spot_radius,spot_intensity_range,min_distance_between_spots,noise_level);
     imwrite(img_blurred,strcat(file_name_fluo,int2str(i),'.png'));
     imwrite(label_img,strcat(file_name_label,int2str(i),'.png'));
     
