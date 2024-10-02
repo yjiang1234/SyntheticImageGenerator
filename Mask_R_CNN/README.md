@@ -46,7 +46,7 @@ After training, I evaluate the model using images in the test_image. The images 
 We can visualize the model's prediction on the test images. It shows the bounding boxes and predicted masks.
 I also calculated Intersection over Union (IoU) between the predicted masks and ground truth masks (labeled images).
 
-The IoU for the boxes is 0.8576, and the Iou for the mask is: 0.6516.
+The IoU for the boxes is 0.8576, and the IoU for the masks is: 0.6516.
 These results suggested that the generated images can help to train the model.
 
 
